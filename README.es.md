@@ -1,7 +1,7 @@
 vagrant-debian-7.4-x64-webserver
 ================================
 
-My chef-solo cookbook with webserver configuration
+Mi chef-solo cookbook que contiene configuraciones para servidor web
 
 Recipes
 -------
@@ -9,25 +9,25 @@ Recipes
 * Postgres 9.1
 * Python with pip and virtualenv
 
-Installation / Usage
---------------------
+Instalación y uso
+-----------------
 
-1. Clone the project
+1. Clone el proyecto
 
     ``` sh
     $ git clone https://github.com/laborautonomo/vagrant-debian-7.4-x64-webserver.git
     $ cd vagrant-debian-7.4-x64-webserver
     ``` 
 
-2. Change `Vagrantfile` with your preferences
+2. Altere el `Vagrantfile` con sus preferencias
 
-3. Configure the MySQL root password in `cookbooks/mysql/recipes/default.rb`
+3. Configure la contraseña del root MySQL em `cookbooks/mysql/recipes/default.rb`
 
     ``` ruby
     mysql_root_pwd = "your-password"
     ``` 
 
-4. Configure Postgres in `cookbooks/postgres/recipes/default.rb`
+4. Configure el Postgres en `cookbooks/postgres/recipes/default.rb`
 
     ``` ruby
     # Edit the following to change the name of the database user that will be created:
@@ -38,7 +38,7 @@ Installation / Usage
 	pg_version=9.1
     ```
 
-5. Configure the hosts and doc_roots of your websites in `cookbooks/apache2/recipes/sites_available.rb`
+5. Configure los hosts y doc_roots de sus proyectos en `cookbooks/apache2/recipes/sites_available.rb`
 
 	``` ruby
     SITES_AVAILABLE = [
@@ -48,15 +48,15 @@ Installation / Usage
 	]
     ```
 
-6. Finally, execute `vagrant up --provision`
+6. Finalmente, ejecute `vagrant up --provision`
 
-References
-----------
+Referências
+------------
 * [erikaheidi/vagrantcookbook](https://github.com/erikaheidi/vagrantcookbook)
 * [kitchenplan/vagrant-chef-kdeploy](https://github.com/kitchenplan/vagrant-chef-kdeploy)
 * [Chef Doc](http://docs.getchef.com/)
 * [gordonlesti.com](http://gordonlesti.com/developing-with-vagrant-part-2/)
 
-Acknowledgment
---------------
+Agradecimientos
+---------------
 * [kaiocesar](https://github.com/kaiocesar)
