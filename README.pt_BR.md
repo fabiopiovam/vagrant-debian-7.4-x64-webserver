@@ -38,7 +38,15 @@ Instalação e uso
 	pg_version=9.1
     ```
 
-5. Configure os hosts e doc_roots dos seus projetos em `cookbooks/apache2/recipes/sites_available.rb`
+5. Configure os valores padrão do Apache2 - vhost em `cookbooks/apache2/recipes/default.rb`
+	
+	``` ruby
+    node.default['apache']['server_name'] = "192.168.33.102"
+	node.default['apache']['server_admin'] = "your@email"
+	node.default['apache']['doc_root'] = "/vagrant"
+    ```
+
+6. Configure os hosts e doc_roots dos seus projetos em `cookbooks/apache2/recipes/sites_available.rb`
 
 	``` ruby
     SITES_AVAILABLE = [
@@ -48,7 +56,7 @@ Instalação e uso
 	]
     ```
 
-6. Por fim, execute `vagrant up --provision`
+7. Por fim, execute `vagrant up --provision`
 
 Referências
 ------------

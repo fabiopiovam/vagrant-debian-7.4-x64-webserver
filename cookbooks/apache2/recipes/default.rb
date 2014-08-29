@@ -1,4 +1,5 @@
 node.default['apache']['server_name'] = "192.168.33.102"
+node.default['apache']['server_admin'] = "fabio@laborautonomo.org"
 node.default['apache']['doc_root'] = "/vagrant"
 
 puts "***********************"
@@ -29,6 +30,7 @@ template "/etc/apache2/sites-available/default" do
   variables({
     :doc_root => node['apache']['doc_root'],
     :server_name => node['apache']['server_name'],
+    :server_admin => node['apache']['server_admin'],
     :sites_available => SITES_AVAILABLE
   })
   action :create

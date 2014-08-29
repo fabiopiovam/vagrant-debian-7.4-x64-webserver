@@ -1,6 +1,6 @@
 <% @sites_available.each do |website| %>
 <VirtualHost *:80>
-    ServerAdmin fabio@laborautonomo.org
+    ServerAdmin <%= @server_admin %>
     
     ServerName <%= website[:server_name] %>
 
@@ -35,7 +35,7 @@
 <% end %>
 
 <VirtualHost *:80>
-	ServerAdmin fabio@laborautonomo.org
+	ServerAdmin <%= @server_admin %>
 	
 	ServerName <%= @server_name %>
 
