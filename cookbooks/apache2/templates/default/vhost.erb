@@ -1,0 +1,69 @@
+<% @sites_available.each do |website| %>
+<VirtualHost *:80>
+    ServerAdmin fabio@laborautonomo.org
+    
+    ServerName <%= website[:server_name] %>
+
+    DocumentRoot <%= @doc_root %>/<%= website[:doc_root] %>
+    <Directory />
+        Options FollowSymLinks
+        AllowOverride All
+    </Directory>
+    <Directory <%= @doc_root %>/<%= website[:doc_root] %>>
+        Order allow,deny
+        allow from all
+    </Directory>
+    
+    DirectoryIndex index.html index.php
+
+    ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+    <Directory "/usr/lib/cgi-bin">
+        AllowOverride None
+        Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+        Order allow,deny
+        Allow from all
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+
+    # Possible values include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel warn
+
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+<% end %>
+
+<VirtualHost *:80>
+	ServerAdmin fabio@laborautonomo.org
+	
+	ServerName <%= @server_name %>
+
+	DocumentRoot <%= @doc_root %>
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride All
+	</Directory>
+	<Directory <%= @doc_root %>>
+		Order allow,deny
+		allow from all
+	</Directory>
+	
+	DirectoryIndex index.html index.php
+
+	ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+	<Directory "/usr/lib/cgi-bin">
+		AllowOverride None
+		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+		Order allow,deny
+		Allow from all
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
