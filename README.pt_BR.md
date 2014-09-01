@@ -9,6 +9,12 @@ Recipes
 * Postgres 9.1
 * Python with pip and virtualenv
 
+Requerimentos
+-------------
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads) `# aptitude install virtualbox`
+* [Vagrant >=1.6.1](http://www.vagrantup.com/downloads.html)
+* [NFS](http://pt.wikipedia.org/wiki/Network_File_System) `# aptitude install nfs-kernel-server nfs-common`
+
 Instalação e uso
 ----------------
 
@@ -20,6 +26,18 @@ Instalação e uso
     ``` 
 
 2. Altere o `Vagrantfile` com suas preferencias
+
+    ``` ruby
+    config.vm.box = "chef/debian-7.4"
+    config.vm.network "forwarded_port", guest: 80, host: 8080
+    config.vm.network "private_network", ip: "192.168.33.102"
+    config.vm.post_up_message = "Your environment is ready and accessible in http://192.168.33.102"
+    config.vm.synced_folder "/var/www", "/vagrant", type: "nfs"
+  
+    config.vm.provider "virtualbox" do |vb|
+      vb.customize ["modifyvm", :id, "--memory", "1024"]
+    end
+    ``` 
 
 3. Configure a senha do usuário root do MySQL em `cookbooks/mysql/recipes/default.rb`
 
