@@ -11,9 +11,11 @@ Recipes
 
 Requirements
 ------------
-* [VirtualBox](https://www.virtualbox.org/wiki/Downloads) `# aptitude install virtualbox`
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads) 
+	* `# aptitude install virtualbox`
 * [Vagrant >=1.6.1](http://www.vagrantup.com/downloads.html)
-* [NFS](http://en.wikipedia.org/wiki/Network_File_System) `# aptitude install nfs-kernel-server nfs-common`
+* [NFS](http://en.wikipedia.org/wiki/Network_File_System) 
+	* `# aptitude install nfs-kernel-server nfs-common`
 
 Installation / Usage
 --------------------
