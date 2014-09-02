@@ -11,6 +11,8 @@ package "libapache2-mod-php5"
 package "php5-mcrypt"
 package "php-pear"
 package 'php5-curl'
+package 'php5-gd'
+package 'php5-imap'
 package 'php5-xdebug'
 package 'php5-mysql'
 package 'php5-pgsql'
