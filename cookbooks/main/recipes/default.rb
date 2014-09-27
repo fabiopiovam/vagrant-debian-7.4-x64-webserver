@@ -1,4 +1,4 @@
-node.default['system']['packages'] = ['curl','git','vim']
+node.default['system']['packages'] = ['curl','git','vim',"libjpeg-dev","zlib1g-dev","libpng12-dev","libfreetype6-dev","gettext"]
 
 execute "apt-get-update-periodic" do
   command "apt-get update"
