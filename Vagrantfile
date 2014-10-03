@@ -22,7 +22,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   
   
-  # config.omnibus.chef_version = :latest
+  config.omnibus.chef_version = :latest
   
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
