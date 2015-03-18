@@ -1,4 +1,4 @@
-mysql_root_pwd = "123456"
+mysql_root_pwd = "root" # "123456"
 mysql_default_db = "dbtest"
 mysql_config_file = "/etc/mysql/my.cnf"
 

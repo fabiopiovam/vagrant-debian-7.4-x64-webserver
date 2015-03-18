@@ -9,4 +9,5 @@ run_list(
     "recipe[postgres]",
     "recipe[php5]",
     "recipe[python-env]",
+    # "recipe[nodejs]",
 )
